@@ -13,7 +13,7 @@
 ```console
 git clone https://github.com/RodricBr/bau
 cd bau/;chmod +x bau
-./bau vulnweb.com -s
+./bau
 ```
 
 ## Examples <br>
@@ -31,3 +31,4 @@ cd bau/;chmod +x bau
 echo "vulnweb.com" | xargs -I{} bash -c './main.sh {} -ns'
 echo "vulnweb.com" | xargs -I{} bash -c './main.sh {} -s "php|js|svg|png"'
 ```
+
