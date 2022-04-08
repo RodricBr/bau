@@ -2,7 +2,7 @@
 
 <h4 align="center"><strong>Bash All Urls</strong></h4>
 
-<img src="https://gamehag.com/img/cases/18.png" alt="Spidery Chest image">
+<img align="center" src="https://gamehag.com/img/cases/18.png" alt="Spidery Chest image">
 
 <hr>
 
