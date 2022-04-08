@@ -1,4 +1,4 @@
-<h2 align="center">Baú</h2> <br>
+<h2 align="center">Baú</h2>
 
 <h4 align="center"><strong>Bash All Urls</strong></h4>
 
