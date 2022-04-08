@@ -1,10 +1,12 @@
 #!/usr/bin/bash
 
 ULTI="${@: -1}"
-SUBSS="${*: -2:1}" # Do lado do ultimo
 
 if [[ -z "$1" ]]; then
-  echo -e "\n./${0##*/} <URL> <-s OR -ns> \"php|jpeg|txt|jpg|svg\"\n"
+  echo -e "\n./${0##*/} <URL> <-s OR -ns> \"php|jpeg|txt|jpg|svg\"\n\
+     -s        :: Include subdomains\n\
+     -ns       :: Not including subdomains\n\
+     \"png|jpg\" :: Exclude file extensions ( Separete using \"|\" (pipe) )\n"
 #https://index.commoncrawl.org/CC-MAIN-2022-05-index?url=$1/*&output=json" | jq '.url'
 fi
 
