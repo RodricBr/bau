@@ -6,7 +6,7 @@
 set -- $*
 
 ULTI="${@: -1}"
-#SUBSS="${*: -2:1}" # Do lado do ultimo
+SUBSS="${*: -2:1}" # Do lado do ultimo
 
 if [[ -z "$1" ]]; then
   echo -e "\n./${0##*/} <URL> <-s OR -ns> \"php|jpeg|txt|jpg|svg\"\n"
@@ -14,7 +14,7 @@ if [[ -z "$1" ]]; then
 fi
 
 if [[ "$2" == "-ns" ]] && [[ ! -z "$1" ]]; then
-  curl -s -k --tcp-fastopen --tcp-nodelay --connect-timeout 25 "https://web.archive.org/cdx/search/cdx?url=$1/*&output=json&fl=original&collapse=urlkey&page=/" | tr -d '[',']','"' | egrep ".*?:\/\/.*\?.*\=[^$]" | egrep -v ".($ULTI)" | uniq #if [[ ! -z "$ULTI" ]]; then egrep -v ".($ULTI)"; else exit 0; fi
+  curl -s -k --tcp-fastopen --tcp-nodelay --connect-timeout 25 "https://web.archive.org/cdx/search/cdx?url=$1/*&output=json&fl=original&collapse=urlkey&page=/" | tr -d '[',']','"' | egrep ".*?:\/\/.*\?.*\=[^$]" | egrep -v ".($ULTI)" | egrep -v ".($ULTI)" | uniq
   exit 0
 fi
 
