@@ -1,14 +1,8 @@
-<style>
-  .aligncenter {
-    text-align: center;
-  }
-</style>
-
 <h2 align="center">Baú</h2> <br>
 
 <h4 align="center"><strong>Bash All Urls</strong></h4>
 
-<img class="aligncenter" src="https://gamehag.com/img/cases/18.png" alt="Spidery Chest image">
+<center><img src="https://gamehag.com/img/cases/18.png" alt="Spidery Chest image"></center>
 
 <hr>
 
