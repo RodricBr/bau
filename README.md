@@ -3,7 +3,7 @@
 <h4 align="center"><strong>Bash All Urls</strong></h4>
 
 <p align="center">
-  <img border="0" draggable="false" src="https://gamehag.com/img/cases/18.png" alt="Spidery Chest">
+  <img border="0" draggable="false" src="./bau.png" alt="Spidery Chest">
 </p>
 
 <hr>
