@@ -13,7 +13,8 @@
 ```console
 git clone https://github.com/RodricBr/bau
 cd bau/;chmod +x bau
-./bau
+sudo mv bau /usr/local/bin/
+bau
 ```
 
 ## Examples <br>
