@@ -10,7 +10,7 @@
 
 ## Instalation <br>
 
-```console
+```bash
 git clone https://github.com/RodricBr/bau
 cd bau/;chmod +x bau
 sudo mv bau /usr/local/bin/
