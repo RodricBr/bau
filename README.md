@@ -27,9 +27,13 @@ bau vulnweb.com -ns
 bau vulnweb.com -s
 ```
 
+> [Nilo](https://github.com/ferreiraklet/nilo) - Checks if URL has status 200
+
 ```bash
 # Pratical use with XARGS
-echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -ns'
-echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -s "php|js|svg|png"'
+echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -ns' | nilo
+
+# XSS Hunting
+echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -s "php|js|svg|png"' | nilo | qsreplace '"><svg onload=alert(1)>'
 ```
 
