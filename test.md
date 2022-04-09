@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <img border="0" draggable="false" src="./frizz.png" alt="Frizz Program Logo">
+  <img border="0" draggable="false" src="https://cdn.discordapp.com/attachments/876919540682989609/962452079052480592/unknown.png" alt="Frizz Program Logo">
 </p>
 
 <hr>
@@ -35,21 +35,13 @@ frizz -h
 ## Examples <br>
 
 ```bash
-$ frizz -ns "js|svg|png"
-$ frizz -s "js|php|svg|png|jpeg|jpg"
-$ frizz -ns
-$ frizz -s
-```
+$ echo "http://127.0.0.1:8080/?q=%0d%0aSet-Cookie:crlf=injection" | frizz -payload "crlf=injection"
 
-```bash
-# Pratical use with XARGS
-echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -ns' | nilo
+$ echo "http://127.0.0.1:8080/?q=%0d%0aSet-Cookie:crlf=injection" | frizz -payload "crlf=injection" -H "Customheader1: value1;cheader2: value2"
 
-# XSS Hunting w/ NILO (Faster)
-echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -s "php|js|svg|png"' | nilo | uro | qsreplace '"><svg onload=alert(1)>' | airixss -payload "alert(1)"
+$ echo "http://127.0.0.1:8080/?q=%0d%0aSet-Cookie:crlf=injection" | frizz -payload "crlf=injection" --proxy "http://yourproxy"
 
-# XSS Hunting w/ HTTPx (Probbing & slower)
-echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -s "php|js|svg|png"' | httpx -silent -mc 200 | qsreplace '"><svg onload=alert(1)>' | airixss -payload "alert(1)"
+$ echo "http://127.0.0.1:8080/?q=%0d%0aSet-Cookie:crlf=injection" | frizz -payload "crlf=injection" --only-poc
 ```
 
 <br>
