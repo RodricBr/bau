@@ -13,6 +13,8 @@
 
 <hr>
 
+**Baú** is a shell/bash script program which uses curl to extract all of a given URL to common crawl and web archive's API <br>
+
 ## Instalation <br>
 
 > Required:
