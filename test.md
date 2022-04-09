@@ -15,6 +15,14 @@
 
 ## Instalation <br>
 
+**From source:**
+
+```bash
+go install github.com/ferreiraklet/frizz@latest
+```
+
+**From git clone:**
+
 ```bash
 git clone https://github.com/ferreiraklet/frizz
 cd frizz/
