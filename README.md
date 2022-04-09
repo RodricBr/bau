@@ -13,7 +13,7 @@
 
 <hr>
 
-**Baú** is a shell/bash script program which uses curl to extract all of a given URL to common crawl and web archive's API <br>
+**Baú** is a shell/bash script program which uses curl to extract all information of a given URL from [common crawl](https://index.commoncrawl.org/) and [web archive's](https://web.archive.org/) API <br>
 
 ## Instalation <br>
 
