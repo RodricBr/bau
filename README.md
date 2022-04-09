@@ -3,6 +3,11 @@
 <h4 align="center"><strong>Bash All Urls</strong></h4>
 
 <p align="center">
+  <a href="#instalation-">Instalation</a> •
+  <a href="#examples-">Examples</a>
+</p>
+
+<p align="center">
   <img border="0" draggable="false" src="./bau.png" alt="Spidery Chest">
 </p>
 
