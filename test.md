@@ -15,13 +15,13 @@
 
 ## Instalation <br>
 
-**From source:**
+**- From source:**
 
 ```bash
 go install github.com/ferreiraklet/frizz@latest
 ```
 
-**From git clone:**
+**- From git clone:**
 
 ```bash
 git clone https://github.com/ferreiraklet/frizz
@@ -34,11 +34,10 @@ frizz -h
 ## Examples <br>
 
 ```bash
-# Normal use
-bau vulnweb.com -ns "js|svg|png"
-bau vulnweb.com -s "js|php|svg|png|jpeg|jpg"
-bau vulnweb.com -ns
-bau vulnweb.com -s
+$ frizz -ns "js|svg|png"
+$ frizz -s "js|php|svg|png|jpeg|jpg"
+$ frizz -ns
+$ frizz -s
 ```
 
 ```bash
