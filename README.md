@@ -14,6 +14,7 @@
 <hr>
 
 **Baú** is a shell/bash script program which uses curl to extract all information of a given URL from [common crawl](https://index.commoncrawl.org/) and [web archive's](https://web.archive.org/) API <br>
+Its purpose is to extract parameters to facilitate for futher exploitation, such as XSS, SQLi, Open Redirects... and so on.
 
 ## Instalation <br>
 
