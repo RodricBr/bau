@@ -15,14 +15,14 @@
 
 ## Instalation <br>
 
-**- From source:**
-- Requires go1.17
+- From source:
+**- Requires go1.17**
 
 ```bash
 go install github.com/ferreiraklet/frizz@latest
 ```
 
-**- From git clone:**
+- From git clone:
 
 ```bash
 git clone https://github.com/ferreiraklet/frizz
