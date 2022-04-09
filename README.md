@@ -15,6 +15,9 @@
 
 ## Instalation <br>
 
+> Required:
+> [curl](https://curl.se/docs/install.html)
+
 ```bash
 git clone https://github.com/RodricBr/bau
 cd bau/;chmod +x bau
