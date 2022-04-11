@@ -61,4 +61,3 @@ echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -s "php|js|svg|png"' | httpx -si
 
 **Inspired by [gau](https://github.com/lc/gau)**
 
-[chamar](https://github.com/RodricBr/bau#examples-)
