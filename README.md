@@ -44,7 +44,7 @@ bau vulnweb.com -s
 
 > [HTTPx](https://github.com/projectdiscovery/httpx) - URL probbing 
 
-> [Uro](https://github.com/s0md3v/uro) - Removing unnecessary urls
+> [Uro](https://github.com/s0md3v/uro) - Removing unnecessary urls (Highly recommended)
 
 ```bash
 # Pratical use with XARGS
