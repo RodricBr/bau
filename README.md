@@ -25,7 +25,7 @@ Its purpose is to extract parameters to facilitate for further exploitation, suc
 git clone https://github.com/RodricBr/bau
 cd bau/;chmod +x bau
 sudo mv bau /usr/local/bin/
-bau
+bau -h
 ```
 
 ## Examples <br>
