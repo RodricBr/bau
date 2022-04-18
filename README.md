@@ -46,6 +46,8 @@ bau vulnweb.com -s
 
 > [Uro](https://github.com/s0md3v/uro) - Removing unnecessary urls (Highly recommended)
 
+> [qsReplace](https://github.com/tomnomnom/qsreplace) - Replaces query string values with a given value
+
 ```bash
 # Pratical use with XARGS
 echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -ns' | nilo
