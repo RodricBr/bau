@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
-# "@" is an array of arguments($1,$2...), and ':' represents this argument at -1 (last argument)
 # "@" é um array de argumentos($1,$2...), e o ':' representa o argumento -1 (último argumento)
+# "@" is an array of arguments($1,$2...), and ':' represents this argument at -1 (last argument)
 ULTI="${@: -1}"
 
 if [[ -z "$1" ]] || [[ "$1" == "-h" ]]; then
