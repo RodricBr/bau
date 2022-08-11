@@ -16,14 +16,14 @@ fi
 # Primeira etapa sem crawling de subdominios
 # First phase without subdomain crawling
 if [[ "$2" == "-ns" ]] && [[ ! -z "$1" ]]; then
-  curl -s -k --tcp-fastopen --tcp-nodelay "https://web.archive.org/cdx/search/cdx?url=$1/*&output=json&fl=original&collapse=urlkey&page=/" | tr -d '[',']','"' | egrep ".*?:\/\/.*\?.*\=[^$]" | egrep -v ".($ULTI)" | uniq
-  curl -s -k --tcp-fastopen --tcp-nodelay "https://index.commoncrawl.org/CC-MAIN-2022-05-index?url=$1/*&output=json&fl=url&page=0" | jq '.url' | tr -d '"' | egrep ".*?:\/\/.*\?.*\=[^$]" | uniq
+  curl -s -k --tcp-fastopen --tcp-nodelay "https://web.archive.org/cdx/search/cdx?url=$1/*&output=json&fl=original&collapse=urlkey&page=/" | tr -d '[',']','"' | grep -E ".*?:\/\/.*\?.*\=[^$]" | grep -Ev ".($ULTI)" | uniq
+  curl -s -k --tcp-fastopen --tcp-nodelay "https://index.commoncrawl.org/CC-MAIN-2022-05-index?url=$1/*&output=json&fl=url&page=0" | jq '.url' | tr -d '"' | grep -E ".*?:\/\/.*\?.*\=[^$]" | uniq
   exit 0
 # Segunda etapa com crawling de subdominios
 # Second phase with subdomain crawling
 elif [[ "$2" == "-s" ]] && [[ ! -z "$1" ]]; then
   #curl -s -k --tcp-fastopen --tcp-nodelay --connect-timeout 25 "https://web.archive.org/cdx/search/cdx?url=*.$1/*&output=json&fl=original&collapse=urlkey&page=/" | tr -d '[',']','"' | egrep ".*?:\/\/.*\?.*\=[^$]" | egrep -v ".($ULTI)" | uniq
-  curl -s -k --tcp-fastopen --tcp-nodelay "https://web.archive.org/cdx/search/cdx?url=*.$1/*&output=json&fl=original&collapse=urlkey&page=/" | tr -d '[',']','"' | egrep ".*?:\/\/.*\?.*\=[^$]" | egrep -v ".($ULTI)" | uniq
-  curl -s -k --tcp-fastopen --tcp-nodelay "https://index.commoncrawl.org/CC-MAIN-2022-05-index?url=*.$1/*&output=json&fl=url&page=0" | jq '.url' | tr -d '"' | egrep ".*?:\/\/.*\?.*\=[^$]" | uniq
+  curl -s -k --tcp-fastopen --tcp-nodelay "https://web.archive.org/cdx/search/cdx?url=*.$1/*&output=json&fl=original&collapse=urlkey&page=/" | tr -d '[',']','"' | grep -E ".*?:\/\/.*\?.*\=[^$]" | grep -Ev ".($ULTI)" | uniq
+  curl -s -k --tcp-fastopen --tcp-nodelay "https://index.commoncrawl.org/CC-MAIN-2022-05-index?url=*.$1/*&output=json&fl=url&page=0" | jq '.url' | tr -d '"' | grep -E ".*?:\/\/.*\?.*\=[^$]" | uniq
   exit 0
 fi
