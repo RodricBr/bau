@@ -10,6 +10,7 @@ if [[ -z "$1" ]] || [[ "$1" == "-h" ]]; then
      -s        :: Include subdomains\n\
      -ns       :: Not including subdomains\n\
      \"png|jpg\" :: Exclude file extensions ( Separete using \"|\" (pipe) )\n"
+     exit 0
 #https://index.commoncrawl.org/CC-MAIN-2022-05-index?url=$1/*&output=json" | jq '.url'
 fi
 
